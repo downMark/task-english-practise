@@ -13,8 +13,8 @@ A lightweight four-page English learning web app built with `Next.js App Router`
 ## Development
 
 ```bash
-pnpm install
-pnpm dev
+npm install
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
@@ -22,14 +22,14 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Production
 
 ```bash
-pnpm build
-pnpm start
+npm run build
+npm start
 ```
 
 Default port is `3000`. Set `PORT` when needed:
 
 ```bash
-PORT=4000 pnpm start
+PORT=4000 npm start
 ```
 
 ## Project Structure
@@ -48,13 +48,13 @@ PORT=4000 pnpm start
 
 ## AWS EC2 Deployment Notes
 
-1. Install Node.js 22 and `pnpm` on the EC2 instance.
+1. Install Node.js 22 on the EC2 instance.
 2. Copy the project to the server.
 3. Install dependencies and build:
 
 ```bash
-pnpm install --frozen-lockfile
-pnpm build
+npm install
+npm run build
 ```
 
 4. Run the app with a process manager or `systemd`.
@@ -90,7 +90,7 @@ After=network.target
 [Service]
 Type=simple
 WorkingDirectory=/srv/english-practice
-ExecStart=/usr/bin/pnpm start
+ExecStart=/usr/bin/npm start
 Restart=always
 Environment=NODE_ENV=production
 Environment=PORT=3000
