@@ -24,6 +24,7 @@ yarn-error.log*
 # misc
 coverage/
 *.tsbuildinfo
+*.pem
 .codex/config.toml
 .pnpm-debug.log
 node_modules/

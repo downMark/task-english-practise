@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { practiceTasks } from "@/data/content";
 import { useLearningState } from "@/hooks/use-learning-state";
@@ -8,7 +8,7 @@ import { useSpeechPlayer } from "@/hooks/use-speech-player";
 import { PracticeControls } from "@/components/practice-controls";
 import { PracticeReader } from "@/components/practice-reader";
 
-export default function PracticePage() {
+function PracticePageContent() {
   const searchParams = useSearchParams();
   const { snapshot, recordPracticeSession, selectPracticeTask } = useLearningState();
   const [selectedTaskId, setSelectedTaskId] = useState(snapshot.recentPracticeTaskId);
@@ -112,5 +112,13 @@ export default function PracticePage() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function PracticePage() {
+  return (
+    <Suspense fallback={<div className="rounded-[28px] border border-border bg-white/90 p-6 shadow-card">Loading practice...</div>}>
+      <PracticePageContent />
+    </Suspense>
   );
 }

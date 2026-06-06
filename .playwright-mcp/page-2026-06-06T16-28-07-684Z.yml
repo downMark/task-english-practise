@@ -1,0 +1,155 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - paragraph [ref=e6]: Learning Hub
+          - heading "English Practice" [level=1] [ref=e7]
+        - paragraph [ref=e8]: Click a task to listen and move over words to see Chinese meanings.
+    - generic [ref=e9]:
+      - complementary [ref=e10]:
+        - generic [ref=e11]:
+          - generic [ref=e12]:
+            - paragraph [ref=e13]: Level
+            - paragraph [ref=e14]: Intermediate
+            - paragraph [ref=e15]: A calm, focused space for reading, listening, and steady practice.
+          - navigation [ref=e16]:
+            - link "Aa Practice" [ref=e17] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e18]: Aa
+              - generic [ref=e19]: Practice
+            - link "Rd Daily Reading" [ref=e20] [cursor=pointer]:
+              - /url: /reading
+              - generic [ref=e21]: Rd
+              - generic [ref=e22]: Daily Reading
+            - link "Au Listening" [ref=e23] [cursor=pointer]:
+              - /url: /listening
+              - generic [ref=e24]: Au
+              - generic [ref=e25]: Listening
+            - link "Pg Progress" [ref=e26] [cursor=pointer]:
+              - /url: /progress
+              - generic [ref=e27]: Pg
+              - generic [ref=e28]: Progress
+          - generic [ref=e29]:
+            - paragraph [ref=e30]: This week
+            - paragraph [ref=e31]: "Keep the loop simple: choose a task, play the passage, hover unfamiliar words, then review your progress."
+      - main [ref=e32]:
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - paragraph [ref=e36]: Practice tasks
+            - heading "Choose a passage and begin immediately" [level=2] [ref=e37]
+            - generic [ref=e38]:
+              - button "Task 1 A Journey to the Forest Beginner A gentle story about walking through an old forest and finding courage." [ref=e39] [cursor=pointer]:
+                - generic [ref=e40]:
+                  - generic [ref=e41]:
+                    - paragraph [ref=e42]: Task 1
+                    - heading "A Journey to the Forest" [level=3] [ref=e43]
+                  - generic [ref=e44]: Beginner
+                - paragraph [ref=e45]: A gentle story about walking through an old forest and finding courage.
+              - button "Task 2 City Lights and Busy Streets Intermediate A snapshot of urban movement, observation, and patient attention." [ref=e46] [cursor=pointer]:
+                - generic [ref=e47]:
+                  - generic [ref=e48]:
+                    - paragraph [ref=e49]: Task 2
+                    - heading "City Lights and Busy Streets" [level=3] [ref=e50]
+                  - generic [ref=e51]: Intermediate
+                - paragraph [ref=e52]: A snapshot of urban movement, observation, and patient attention.
+              - button "Task 3 The Silent Architecture of Focus Advanced A reflective paragraph on building a better learning environment." [ref=e53] [cursor=pointer]:
+                - generic [ref=e54]:
+                  - generic [ref=e55]:
+                    - paragraph [ref=e56]: Task 3
+                    - heading "The Silent Architecture of Focus" [level=3] [ref=e57]
+                  - generic [ref=e58]: Advanced
+                - paragraph [ref=e59]: A reflective paragraph on building a better learning environment.
+              - button "Task 4 Morning at the Open Market Beginner A lively market scene full of colors, voices, and simple details." [ref=e60] [cursor=pointer]:
+                - generic [ref=e61]:
+                  - generic [ref=e62]:
+                    - paragraph [ref=e63]: Task 4
+                    - heading "Morning at the Open Market" [level=3] [ref=e64]
+                  - generic [ref=e65]: Beginner
+                - paragraph [ref=e66]: A lively market scene full of colors, voices, and simple details.
+          - generic [ref=e67]:
+            - generic [ref=e69]:
+              - generic [ref=e70]:
+                - paragraph [ref=e71]: Current practice
+                - heading "A Journey to the Forest" [level=2] [ref=e72]
+                - paragraph [ref=e73]: Read with calm pacing and notice descriptive words.
+              - generic [ref=e74]:
+                - generic [ref=e75]: Beginner
+                - generic [ref=e76]: 4 min
+            - generic [ref=e77]:
+              - paragraph [ref=e78]: Playback
+              - generic [ref=e79]:
+                - generic [ref=e80]:
+                  - heading "Listen to the full passage" [level=3] [ref=e81]
+                  - paragraph [ref=e82]: Ready to play
+                - generic [ref=e83]:
+                  - button "Play" [ref=e84] [cursor=pointer]
+                  - button "Replay" [ref=e85] [cursor=pointer]
+            - generic [ref=e86]:
+              - generic [ref=e87]:
+                - generic [ref=e88]:
+                  - paragraph [ref=e89]: Reading mode
+                  - heading "Read, listen, and inspect vocabulary in place" [level=3] [ref=e90]
+                - generic [ref=e91]: Hover on desktop, tap on mobile
+              - paragraph [ref=e92]:
+                - generic [ref=e93]: The
+                - generic [ref=e95]:
+                  - button "ancient" [active] [ref=e96] [cursor=pointer]
+                  - generic:
+                    - generic: ancient
+                    - generic: 古老的 · adj.
+                - button "forest" [ref=e99] [cursor=pointer]
+                - generic [ref=e100]: was
+                - generic [ref=e101]: quiet
+                - generic [ref=e102]: in
+                - generic [ref=e103]: the
+                - generic [ref=e104]: early
+                - generic [ref=e105]: morning
+                - generic [ref=e106]: .
+                - generic [ref=e107]: Emma
+                - generic [ref=e108]: walked
+                - generic [ref=e109]: along
+                - generic [ref=e110]: the
+                - generic [ref=e111]: narrow
+                - button "path" [ref=e114] [cursor=pointer]
+                - generic [ref=e115]: with
+                - button "curious" [ref=e118] [cursor=pointer]
+                - generic [ref=e119]: eyes
+                - generic [ref=e120]: and
+                - generic [ref=e121]: careful
+                - generic [ref=e122]: steps
+                - generic [ref=e123]: .
+                - generic [ref=e124]: Soft
+                - button "whispers" [ref=e127] [cursor=pointer]
+                - generic [ref=e128]: moved
+                - generic [ref=e129]: through
+                - generic [ref=e130]: the
+                - button "leaves" [ref=e133] [cursor=pointer]
+                - generic [ref=e134]: above
+                - generic [ref=e135]: her
+                - generic [ref=e136]: ","
+                - generic [ref=e137]: and
+                - generic [ref=e138]: every
+                - generic [ref=e139]: sound
+                - generic [ref=e140]: seemed
+                - generic [ref=e141]: to
+                - generic [ref=e142]: invite
+                - generic [ref=e143]: her
+                - generic [ref=e144]: deeper
+                - generic [ref=e145]: inside
+                - generic [ref=e146]: .
+                - generic [ref=e147]: She
+                - generic [ref=e148]: felt
+                - generic [ref=e149]: a
+                - generic [ref=e150]: little
+                - generic [ref=e151]: nervous
+                - generic [ref=e152]: ","
+                - generic [ref=e153]: but
+                - generic [ref=e154]: her
+                - button "courage" [ref=e157] [cursor=pointer]
+                - generic [ref=e158]: grew
+                - generic [ref=e159]: with
+                - generic [ref=e160]: each
+                - generic [ref=e161]: step
+                - generic [ref=e162]: .
+  - alert [ref=e163]
