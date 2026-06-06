@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>English Practice - Dashboard</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;600&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#370e00",
+                    "primary-container": "#008378",
+                    "outline-variant": "#bcc9c6",
+                    "surface-container": "#e6eeff",
+                    "primary": "#00685f",
+                    "difficulty-easy": "#22C55E",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#00201d",
+                    "background": "#f8f9ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "secondary": "#0058be",
+                    "on-error-container": "#93000a",
+                    "surface-card": "#FFFFFF",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#121c2a",
+                    "surface": "#f8f9ff",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#ffdbce",
+                    "tertiary-container": "#b05e3d",
+                    "on-secondary-container": "#fefcff",
+                    "accent-blue-light": "#EFF6FF",
+                    "primary-fixed": "#89f5e7",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#d9e3f6",
+                    "surface-background": "#F8FAFC",
+                    "on-background": "#121c2a",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#eff4ff",
+                    "on-secondary-fixed-variant": "#004395",
+                    "secondary-container": "#2170e4",
+                    "inverse-primary": "#6bd8cb",
+                    "tertiary-fixed-dim": "#ffb59a",
+                    "on-primary-fixed-variant": "#005049",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#d9e3f6",
+                    "surface-tint": "#006a61",
+                    "primary-fixed-dim": "#6bd8cb",
+                    "difficulty-medium": "#F59E0B",
+                    "inverse-surface": "#27313f",
+                    "surface-bright": "#f8f9ff",
+                    "on-error": "#ffffff",
+                    "accent-teal-light": "#F0FDFA",
+                    "on-secondary-fixed": "#001a42",
+                    "outline": "#6d7a77",
+                    "on-tertiary-container": "#fffbff",
+                    "surface-container-high": "#dee9fc",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "difficulty-hard": "#EF4444",
+                    "on-surface-variant": "#3d4947",
+                    "tertiary": "#924628",
+                    "on-primary-container": "#f4fffc",
+                    "surface-dim": "#d0dbed",
+                    "on-tertiary-fixed-variant": "#773215",
+                    "secondary-fixed": "#d8e2ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "reading-max-width": "720px",
+                    "base": "4px",
+                    "section-padding": "48px",
+                    "container-max": "1200px",
+                    "gutter": "24px",
+                    "sidebar-width": "320px"
+            },
+            "fontFamily": {
+                    "display-title": ["Hanken Grotesk"],
+                    "body-reading-mobile": ["Source Serif 4"],
+                    "label-pill": ["Inter"],
+                    "tooltip-def": ["Inter"],
+                    "body-reading": ["Source Serif 4"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "tooltip-word": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-ui": ["Inter"]
+            },
+            "fontSize": {
+                    "display-title": ["2.5rem", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-reading-mobile": ["1.125rem", {"lineHeight": "1.7", "fontWeight": "400"}],
+                    "label-pill": ["0.75rem", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "tooltip-def": ["0.875rem", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-reading": ["1.25rem", {"lineHeight": "1.8", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "headline-md": ["1.125rem", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "tooltip-word": ["0.875rem", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["1.5rem", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-ui": ["1rem", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .reading-content ::selection {
+            background-color: #F0FDFA;
+            color: #00685f;
+        }
+        .tooltip-trigger {
+            border-bottom: 2px dotted #00685f;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .tooltip-trigger:hover {
+            background-color: #F0FDFA;
+        }
+    </style>
+</head>
+<body class="bg-surface-background text-on-surface font-body-ui">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter h-16 bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-8">
+<span class="font-display-title text-headline-lg font-bold text-primary dark:text-primary-fixed-dim">English Practice</span>
+<nav class="hidden md:flex gap-6">
+<a class="font-body-ui text-body-ui text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Dashboard</a>
+<a class="font-body-ui text-body-ui text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1" href="#">Practice</a>
+<a class="font-body-ui text-body-ui text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Library</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">settings</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">account_circle</button>
+</div>
+</header>
+<!-- Sidebar Navigation (Desktop Only) -->
+<aside class="hidden lg:flex flex-col fixed left-0 top-16 h-[calc(100vh-64px)] p-4 bg-surface-container-low dark:bg-surface-container-high border-r border-outline-variant dark:border-outline w-sidebar-width overflow-y-auto">
+<div class="mb-6 px-2">
+<h2 class="font-headline-md text-headline-md text-primary mb-1">Learning Hub</h2>
+<p class="font-label-pill text-label-pill text-on-surface-variant uppercase tracking-wider">Level: Intermediate</p>
+</div>
+<nav class="flex flex-col gap-2 mb-8">
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-surface-variant px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-pill text-label-pill">Daily Reading</span>
+</a>
+<a class="flex items-center gap-4 bg-accent-teal-light dark:bg-primary-container text-primary dark:text-on-primary-container rounded-lg px-4 py-3 border-l-4 border-primary scale-[0.98] transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">translate</span>
+<span class="font-label-pill text-label-pill">Vocabulary</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-surface-variant px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">headphones</span>
+<span class="font-label-pill text-label-pill">Listening</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-surface-variant px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-label-pill text-label-pill">Progress</span>
+</a>
+</nav>
+<button class="w-full py-3 px-4 bg-primary text-on-primary rounded-xl font-body-ui font-semibold shadow-sm hover:opacity-90 transition-opacity mb-auto">
+            Start New Lesson
+        </button>
+<div class="border-t border-outline-variant pt-4 mt-8">
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-2 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-pill text-label-pill">Help</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-2 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-pill text-label-pill">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="lg:ml-sidebar-width mt-16 min-h-screen flex flex-col md:flex-row">
+<!-- Practice Tasks List (30% approx) -->
+<section class="w-full md:w-[350px] p-6 border-r border-outline-variant bg-surface-container-lowest">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Practice Tasks</h3>
+<span class="bg-surface-container-highest px-2 py-1 rounded text-label-pill font-semibold">4 New</span>
+</div>
+<div class="space-y-4">
+<!-- Task Item Active -->
+<div class="p-4 bg-accent-teal-light border-2 border-primary rounded-xl shadow-sm cursor-pointer transform hover:scale-[1.01] transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-pill text-label-pill text-primary">#01</span>
+<span class="bg-difficulty-easy/10 text-difficulty-easy text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Beginner</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">A Journey to the Forest</h4>
+<p class="text-on-surface-variant text-sm line-clamp-2">The ancient forest was filled with mysterious sounds...</p>
+</div>
+<!-- Task Item Inactive -->
+<div class="p-4 bg-surface-card border border-outline-variant rounded-xl hover:border-primary/40 transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-pill text-label-pill text-on-surface-variant">#02</span>
+<span class="bg-difficulty-medium/10 text-difficulty-medium text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Intermediate</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">City Lights &amp; Busy Streets</h4>
+<p class="text-on-surface-variant text-sm line-clamp-2">Urban environments offer a unique set of challenges and opportunities for...</p>
+</div>
+<!-- Task Item Inactive -->
+<div class="p-4 bg-surface-card border border-outline-variant rounded-xl hover:border-primary/40 transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-pill text-label-pill text-on-surface-variant">#03</span>
+<span class="bg-difficulty-hard/10 text-difficulty-hard text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Advanced</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">Quantum Mechanics Simplified</h4>
+<p class="text-on-surface-variant text-sm line-clamp-2">Exploring the fundamental principles that govern the smallest particles in the...</p>
+</div>
+<!-- Task Item Inactive -->
+<div class="p-4 bg-surface-card border border-outline-variant rounded-xl hover:border-primary/40 transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-pill text-label-pill text-on-surface-variant">#04</span>
+<span class="bg-difficulty-easy/10 text-difficulty-easy text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Beginner</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">The Perfect Cup of Tea</h4>
+<p class="text-on-surface-variant text-sm line-clamp-2">Learning how to brew tea correctly requires patience and specific knowledge of...</p>
+</div>
+</div>
+</section>
+<!-- Main Content Canvas (70% approx) -->
+<section class="flex-1 p-6 lg:p-12 bg-surface-background">
+<div class="max-w-[reading-max-width] mx-auto">
+<!-- Title and Controls -->
+<header class="mb-10 text-center lg:text-left">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+<div>
+<nav class="flex items-center gap-2 text-on-surface-variant font-label-pill text-label-pill mb-4">
+<span>Practice</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Reading &amp; Listening</span>
+</nav>
+<h1 class="font-display-title text-display-title text-on-surface">A Journey to the Forest</h1>
+</div>
+<div class="flex justify-center gap-3">
+<button class="flex items-center gap-3 px-8 py-4 bg-primary text-on-primary rounded-full font-body-ui font-bold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                                Play Audio
+                            </button>
+<button class="w-14 h-14 flex items-center justify-center border border-outline text-on-surface-variant rounded-full hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">replay</span>
+</button>
+</div>
+</div>
+</header>
+<!-- The Reading Card -->
+<article class="bg-surface-card rounded-[2rem] p-8 lg:p-16 border border-outline-variant/30 shadow-[0_4px_20px_rgba(0,0,0,0.04)] relative overflow-visible">
+<div class="reading-content font-body-reading text-body-reading text-on-surface leading-relaxed relative">
+                        The ancient forest was filled with 
+                        
+                        <!-- Tooltip Container -->
+<span class="relative inline-block group">
+<span class="tooltip-trigger font-bold text-primary">mysterious</span>
+<!-- Tooltip Element -->
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-64 p-4 bg-inverse-surface text-on-primary-container rounded-xl shadow-2xl opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all pointer-events-none z-10">
+<p class="font-tooltip-word text-tooltip-word text-primary-fixed-dim mb-1">mysterious (adj.)</p>
+<div class="h-px bg-outline-variant/30 w-full mb-2"></div>
+<p class="font-tooltip-def text-tooltip-def text-surface-variant leading-tight">
+                                    神秘的; 难以捉摸的<br/>
+<span class="text-[11px] opacity-60 italic mt-1 inline-block">Difficult or impossible to understand, explain, or identify.</span>
+</p>
+<!-- Tooltip Arrow -->
+<div class="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-inverse-surface"></div>
+</div>
+</span>
+                        
+                        sounds. Every step on the damp earth felt like a new discovery. 
+                        
+                        <div class="mt-8">
+                            As the sunlight filtered through the dense canopy, creating patterns of gold on the emerald moss, a sense of timelessness took hold. The tall oaks stood like silent guardians of a forgotten era, their branches whispering secrets to the wind.
+                        </div>
+</div>
+<!-- Visual Accent -->
+<div class="absolute -top-6 -right-6 w-12 h-12 bg-accent-blue-light rounded-full flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-secondary text-lg">lightbulb</span>
+</div>
+</article>
+<!-- Image Context -->
+<div class="mt-12 rounded-3xl overflow-hidden aspect-[16/6] relative group shadow-inner bg-surface-container">
+<img alt="Ancient forest context" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A lush and ancient temperate forest at dawn, where thick shafts of sunlight pierce through a dense green canopy of oak and pine. The forest floor is covered in vibrant emerald moss and scattered autumn leaves, creating a soft, damp texture. The lighting is ethereal and high-contrast, with a color palette dominated by deep forest greens, warm gold, and earthy browns. The atmosphere is quiet, educational, and serene, mirroring a modern minimalist UI aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDDlrbaW5pHlOzk9uVrzobLVqUbpdjqVR4Ne43CiwvQBK1OlYI3U8PKDWKWmpwaWhc2x1sSRsuEJg44JDMa8qhU53YE-iS6N5Ih9REV-ERJlsC5A6MWd4zaz4X_0QLBjeEbKxejGUShwc2QfFxj6K2soLDU41wkmfW1K2sqFKctgIR1h2cbfv3T8WgvofqdQwEnQdW_M16n1Ctyr1mBzi-H0JK5NrficRTiNJukC2uEJO5PdI5sXHH7-efcn5oFgkCaWI1tdq04g4F"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<p class="absolute bottom-4 left-6 text-white/90 font-label-pill text-[10px] uppercase tracking-widest">Image Reference: Forest Discovery</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Global Footer -->
+<footer class="w-full py-8 px-gutter flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-background dark:bg-inverse-surface border-t border-outline-variant dark:border-outline">
+<p class="font-label-pill text-label-pill text-on-surface-variant dark:text-surface-variant">© 2024 English Practice. Focus on Fluency.</p>
+<div class="flex gap-6">
+<a class="font-body-ui text-body-ui text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-ui text-body-ui text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-ui text-body-ui text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="#">Contact Support</a>
+</div>
+</footer>
+<!-- Mobile Navigation Bar (md:hidden) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface-container-low border-t border-outline-variant flex justify-around py-3 px-2 z-50">
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-label-pill">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">translate</span>
+<span class="text-[10px] font-label-pill">Practice</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">library_books</span>
+<span class="text-[10px] font-label-pill">Library</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-label-pill">Profile</span>
+</button>
+</nav>
+<script>
+        // Simple micro-interaction for the tooltip
+        const tooltipTrigger = document.querySelector('.tooltip-trigger');
+        const tooltip = tooltipTrigger.nextElementSibling;
+
+        // Interaction for Mobile/Tablet Click
+        tooltipTrigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            tooltip.classList.toggle('opacity-100');
+            tooltip.classList.toggle('pointer-events-auto');
+        });
+
+        document.addEventListener('click', () => {
+            tooltip.classList.remove('opacity-100');
+            tooltip.classList.remove('pointer-events-auto');
+        });
+
+        // Play Button Animation Simulation
+        const playBtn = document.querySelector('button:has(.material-symbols-outlined:contains("play_arrow"))');
+        if (playBtn) {
+            playBtn.addEventListener('click', function() {
+                const icon = this.querySelector('.material-symbols-outlined');
+                if (icon.innerText === 'play_arrow') {
+                    icon.innerText = 'pause';
+                    this.classList.add('bg-secondary');
+                } else {
+                    icon.innerText = 'play_arrow';
+                    this.classList.remove('bg-secondary');
+                }
+            });
+        }
+    </script>
+</body></html>

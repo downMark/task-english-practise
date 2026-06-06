@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily Reading - English Practice</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Hanken+Grotesk:wght@600;700;800&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#ffb59a",
+                    "accent-teal-light": "#F0FDFA",
+                    "primary": "#00685f",
+                    "primary-fixed": "#89f5e7",
+                    "on-surface-variant": "#3d4947",
+                    "on-primary-fixed": "#00201d",
+                    "inverse-surface": "#27313f",
+                    "on-primary-container": "#f4fffc",
+                    "surface-container-highest": "#d9e3f6",
+                    "surface-background": "#F8FAFC",
+                    "on-secondary-fixed-variant": "#004395",
+                    "secondary-container": "#2170e4",
+                    "primary-fixed-dim": "#6bd8cb",
+                    "surface-card": "#FFFFFF",
+                    "secondary-fixed": "#d8e2ff",
+                    "surface-variant": "#d9e3f6",
+                    "tertiary-fixed": "#ffdbce",
+                    "surface-container-low": "#eff4ff",
+                    "surface-container-high": "#dee9fc",
+                    "on-tertiary-fixed": "#370e00",
+                    "on-tertiary-fixed-variant": "#773215",
+                    "difficulty-hard": "#EF4444",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "surface-container": "#e6eeff",
+                    "on-background": "#121c2a",
+                    "on-surface": "#121c2a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "tertiary-container": "#b05e3d",
+                    "surface-tint": "#006a61",
+                    "accent-blue-light": "#EFF6FF",
+                    "background": "#f8f9ff",
+                    "outline": "#6d7a77",
+                    "on-tertiary-container": "#fffbff",
+                    "outline-variant": "#bcc9c6",
+                    "surface-dim": "#d0dbed",
+                    "on-tertiary": "#ffffff",
+                    "difficulty-medium": "#F59E0B",
+                    "inverse-primary": "#6bd8cb",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#fefcff",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "on-secondary": "#ffffff",
+                    "surface": "#f8f9ff",
+                    "difficulty-easy": "#22C55E",
+                    "on-primary-fixed-variant": "#005049",
+                    "tertiary": "#924628",
+                    "primary-container": "#008378",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#001a42",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#f8f9ff",
+                    "secondary": "#0058be"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-padding": "48px",
+                    "container-max": "1200px",
+                    "gutter": "24px",
+                    "base": "4px",
+                    "sidebar-width": "320px",
+                    "reading-max-width": "720px"
+            },
+            "fontFamily": {
+                    "body-reading": ["Source Serif 4"],
+                    "body-reading-mobile": ["Source Serif 4"],
+                    "tooltip-def": ["Inter"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "display-title": ["Hanken Grotesk"],
+                    "tooltip-word": ["Hanken Grotesk"],
+                    "label-pill": ["Inter"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-ui": ["Inter"]
+            },
+            "fontSize": {
+                    "body-reading": ["1.25rem", {"lineHeight": "1.8", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "body-reading-mobile": ["1.125rem", {"lineHeight": "1.7", "fontWeight": "400"}],
+                    "tooltip-def": ["0.875rem", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-md": ["1.125rem", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "display-title": ["2.5rem", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "tooltip-word": ["0.875rem", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-pill": ["0.75rem", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["1.5rem", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-ui": ["1rem", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #F8FAFC;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #bcc9c6;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="font-body-ui text-on-background selection:bg-primary-fixed">
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter h-16 bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-8">
+<span class="font-display-title text-headline-lg font-bold text-primary dark:text-primary-fixed-dim">English Practice</span>
+<nav class="hidden md:flex gap-6">
+<a class="font-body-ui text-body-ui text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="font-body-ui text-body-ui text-primary dark:text-primary-fixed-dim border-b-2 border-primary pb-1" href="#">Practice</a>
+<a class="font-body-ui text-body-ui text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="#">Library</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors">settings</button>
+<button class="material-symbols-outlined text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors">account_circle</button>
+</div>
+</header>
+<div class="flex pt-16 min-h-screen">
+<!-- SideNavBar Shell -->
+<aside class="hidden lg:flex flex-col fixed left-0 top-16 h-[calc(100vh-64px)] w-sidebar-width p-4 border-r border-outline-variant dark:border-outline bg-surface-container-low dark:bg-surface-container-high overflow-y-auto custom-scrollbar">
+<div class="mb-8 px-4">
+<h2 class="font-headline-md text-headline-md text-primary">Learning Hub</h2>
+<p class="font-label-pill text-label-pill text-on-surface-variant">Level: Intermediate</p>
+</div>
+<nav class="space-y-1 mb-auto">
+<a class="flex items-center gap-4 bg-accent-teal-light dark:bg-primary-container text-primary dark:text-on-primary-container rounded-lg px-4 py-3 border-l-4 border-primary scale-[0.98] transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-pill text-label-pill">Daily Reading</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-surface-variant px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">translate</span>
+<span class="font-label-pill text-label-pill">Vocabulary</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-surface-variant px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">headphones</span>
+<span class="font-label-pill text-label-pill">Listening</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-surface-variant px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-label-pill text-label-pill">Progress</span>
+</a>
+</nav>
+<button class="mt-8 mb-8 w-full bg-primary text-on-primary py-3 px-4 rounded-lg font-label-pill text-label-pill flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+                Start New Lesson
+            </button>
+<div class="border-t border-outline-variant pt-4 space-y-1">
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-2 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-pill text-label-pill">Help</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-2 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-pill text-label-pill">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 lg:ml-sidebar-width p-gutter lg:p-12 max-w-[1440px] mx-auto w-full">
+<!-- Hero: Article of the Day -->
+<section class="mb-16">
+<div class="relative rounded-xl overflow-hidden group cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.04)] bg-surface-card border border-outline-variant">
+<div class="grid md:grid-cols-2 gap-0">
+<div class="relative h-64 md:h-[400px]">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A serene and scholarly study environment featuring an open classic book on a dark wooden desk next to a modern laptop. Soft morning sunlight streams through a large window, illuminating dust motes in a high-key academic setting. The color palette is composed of soft whites, deep charcoals, and accents of calming teal. Professional, minimalist photography style with a shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEj6TanJTetctYwCFdSqjhfYxb3dmSfb6_0HAstCy5hNvPVemrBS7-QS1UXKQnE2LJOaK4tmJPgGuRDOjkH2nf4ASOSf-ZbTSF4Y_lxJwRt46Zo6ydTQozlvX3jto3R7IsfHIf6KQgNbp3lM5VVREJwj7Apr0E2nalJZCkPe5TglASbPAFQIcVQca015a3ebPzqg--Mzha9LSrrLzs395z53nUSiJeoY-6ivg3u1MHY0csnMveKUNdBB0Wl5kl1eFbHsLO1eVVJlkh"/>
+<div class="absolute inset-0 bg-gradient-to-r from-transparent to-surface-card hidden md:block"></div>
+</div>
+<div class="p-8 lg:p-12 flex flex-col justify-center bg-surface-card">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-pill text-[10px] uppercase tracking-widest">Article of the Day</span>
+<span class="bg-difficulty-medium/10 text-difficulty-medium px-3 py-1 rounded-full font-label-pill text-[10px] uppercase tracking-widest">Intermediate</span>
+</div>
+<h1 class="font-display-title text-display-title text-on-surface mb-4">The Silent Architecture of Deep Focus</h1>
+<p class="font-body-ui text-body-ui text-on-surface-variant mb-8 line-clamp-3">Discover how environment shapes our cognitive abilities and why modern educational spaces are returning to minimalist roots to foster fluency and comprehension.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="flex items-center gap-1 font-label-pill text-label-pill">
+<span class="material-symbols-outlined text-[18px]">schedule</span> 12 min read
+                                    </span>
+<span class="flex items-center gap-1 font-label-pill text-label-pill">
+<span class="material-symbols-outlined text-[18px]">menu_book</span> 1,200 words
+                                    </span>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-pill text-label-pill hover:bg-primary/90 transition-colors flex items-center gap-2">
+                                    Start Reading <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Categorized Feed (Bento Style Layout) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Section Header -->
+<div class="col-span-12 flex items-baseline justify-between border-b border-outline-variant pb-4 mb-4">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Curated Collections</h3>
+<a class="font-label-pill text-label-pill text-primary hover:underline" href="#">View All Categories</a>
+</div>
+<!-- Science & Nature (Featured Card) -->
+<div class="col-span-12 md:col-span-8 bg-surface-card border border-outline-variant rounded-xl p-6 hover:shadow-lg transition-shadow cursor-pointer group">
+<div class="flex flex-col md:flex-row gap-6">
+<img class="w-full md:w-48 h-48 rounded-lg object-cover" data-alt="A futuristic and clean representation of deep space exploration, showing a glowing blue nebula intertwined with digital data streams. The aesthetic is modern and corporate with a high-contrast palette of navy, teal, and bright white. Soft ambient lighting creates a mood of wonder and scientific precision. Minimalist digital art style with sharp details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZeqV0mwqv85jkHdwrhaczppJkkFgRdy16DVtYqsc3tXHSNr2AIJzdT-3kAfy87RjlafLlx9C9MFYfO4nyVRd25TabAStL_6C_ZXZUuQkRC_qtP3c7AZCtQGtE_Go4CPWSoo6oV3YvsMxY9qsr-sQvh_NTHtyJhVBy-McVtpE-SwJco6aZmxrOddfG12rhVvkZeWSezzozc0y6m3hS3U5DlsJ7GFnbrXA7E99_-pyzheaU5CYFCIf9NcY4ZEskl54dVlJA5qKyj1b6"/>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="text-secondary font-label-pill text-[10px] uppercase">Science</span>
+<span class="bg-difficulty-hard/10 text-difficulty-hard px-2 py-0.5 rounded font-label-pill text-[10px] uppercase">Hard</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">Quantum Computing: Breaking the Fluency Barrier</h4>
+<p class="font-body-ui text-body-ui text-on-surface-variant mb-4 line-clamp-2">Exploring the intersections of machine learning and human linguistics in the next decade of computing technology.</p>
+<div class="flex items-center gap-4 font-label-pill text-label-pill text-on-surface-variant">
+<span>8 min read</span>
+<span>•</span>
+<span>Updated 2h ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Short Stories (Compact Card) -->
+<div class="col-span-12 md:col-span-4 bg-surface-card border border-outline-variant rounded-xl p-6 hover:shadow-lg transition-shadow cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<span class="text-tertiary font-label-pill text-[10px] uppercase">Short Stories</span>
+<span class="bg-difficulty-easy/10 text-difficulty-easy px-2 py-0.5 rounded font-label-pill text-[10px] uppercase">Easy</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">The Weaver's Paradox</h4>
+<p class="font-body-ui text-body-ui text-on-surface-variant mb-6 line-clamp-2">A lyrical tale about a small village where every word spoken becomes a physical thread in a giant tapestry.</p>
+<div class="flex items-center justify-between font-label-pill text-label-pill text-on-surface-variant">
+<span>5 min read</span>
+<span class="material-symbols-outlined text-[18px]">bookmark_add</span>
+</div>
+</div>
+<!-- World News (Medium Card) -->
+<div class="col-span-12 md:col-span-4 bg-surface-card border border-outline-variant rounded-xl p-6 hover:shadow-lg transition-shadow cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<span class="text-primary font-label-pill text-[10px] uppercase">World News</span>
+<span class="bg-difficulty-medium/10 text-difficulty-medium px-2 py-0.5 rounded font-label-pill text-[10px] uppercase">Intermediate</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">Economic Shifts in Southeast Asia</h4>
+<p class="font-body-ui text-body-ui text-on-surface-variant mb-6 line-clamp-2">How emerging markets are redefining global trade routes and the importance of professional English in these regions.</p>
+<div class="flex items-center justify-between font-label-pill text-label-pill text-on-surface-variant">
+<span>10 min read</span>
+<span class="material-symbols-outlined text-[18px]">share</span>
+</div>
+</div>
+<!-- Technology (Medium Card) -->
+<div class="col-span-12 md:col-span-8 bg-surface-card border border-outline-variant rounded-xl p-6 hover:shadow-lg transition-shadow cursor-pointer group">
+<div class="flex flex-col md:flex-row-reverse gap-6">
+<img class="w-full md:w-48 h-48 rounded-lg object-cover" data-alt="A clean and modern robotics laboratory where a sleek, white robotic hand is holding a delicate glass sphere. The environment is flooded with soft, neutral light, emphasizing the polished surfaces and high-tech equipment. The palette is dominated by whites and grays with accents of primary teal. The mood is sophisticated and forward-looking. Professional architectural photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6oB_TJgoQ6KisSvIDIg8APFmt9vSQWH8aNvd_lQru4m57IZEhLq5wM_edekkzx_eB7NXvKon1N7LvG0YXu2iQIw3Mevd3eqYCP4uWrETd2_CTTj78kWhXdplj0pxa87S4oGnuk-QLKhI9OJcA1e87yNQXHc9fo0WcfgopLeCgNzUFhRN_JAZyCun4Xws_8wCJ8XIH4nHHeXPIfJ0i2AByApevj68fb1yl4LA9qaEfQF3i8ucEDXSA9v-aLBXqOikqNz0_xoMbtk_o"/>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="text-secondary font-label-pill text-[10px] uppercase">Technology</span>
+<span class="bg-difficulty-medium/10 text-difficulty-medium px-2 py-0.5 rounded font-label-pill text-[10px] uppercase">Intermediate</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">Humanizing Artificial Intelligence</h4>
+<p class="font-body-ui text-body-ui text-on-surface-variant mb-4 line-clamp-2">The ethical challenges and linguistic nuances involved in creating AI that can truly understand human emotion.</p>
+<div class="flex items-center gap-4 font-label-pill text-label-pill text-on-surface-variant">
+<span>15 min read</span>
+<span>•</span>
+<span>Series: Part 1 of 3</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Personalized Recommendation Section -->
+<section class="mt-20 p-12 rounded-2xl bg-surface-container-low border border-outline-variant text-center relative overflow-hidden">
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-accent-teal-light rounded-full blur-3xl opacity-50"></div>
+<div class="absolute -bottom-12 -left-12 w-48 h-48 bg-surface-container-high rounded-full blur-3xl opacity-50"></div>
+<span class="material-symbols-outlined text-primary text-[48px] mb-4">auto_awesome</span>
+<h2 class="font-display-title text-headline-lg text-on-surface mb-4">Based on your Progress</h2>
+<p class="font-body-ui text-body-ui text-on-surface-variant max-w-lg mx-auto mb-8">We've noticed you enjoy science and technology articles. Here's a curated path to improve your technical vocabulary.</p>
+<button class="border-2 border-primary text-primary px-8 py-3 rounded-lg font-label-pill text-label-pill hover:bg-primary hover:text-on-primary transition-all duration-300">
+                    Explore Your Path
+                </button>
+</section>
+</main>
+</div>
+<!-- Footer Shell -->
+<footer class="w-full py-8 px-gutter flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-background dark:bg-inverse-surface border-t border-outline-variant dark:border-outline">
+<span class="font-display-title text-label-pill text-on-surface-variant">© 2024 English Practice. Focus on Fluency.</span>
+<div class="flex gap-6">
+<a class="font-body-ui text-label-pill text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-ui text-label-pill text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-ui text-label-pill text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Support</a>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for article cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

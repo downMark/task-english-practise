@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Progress Dashboard - English Practice</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Hanken+Grotesk:wght@600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .achievement-card:hover .badge-glow {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #bcc9c6;
+            border-radius: 10px;
+        }
+        .heatmap-cell {
+            aspect-ratio: 1/1;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "accent-teal-light": "#F0FDFA",
+                        "primary": "#00685f",
+                        "primary-fixed": "#89f5e7",
+                        "on-surface-variant": "#3d4947",
+                        "on-primary-fixed": "#00201d",
+                        "inverse-surface": "#27313f",
+                        "on-primary-container": "#f4fffc",
+                        "surface-container-highest": "#d9e3f6",
+                        "surface-background": "#F8FAFC",
+                        "on-secondary-fixed-variant": "#004395",
+                        "secondary-container": "#2170e4",
+                        "primary-fixed-dim": "#6bd8cb",
+                        "surface-card": "#FFFFFF",
+                        "secondary-fixed": "#d8e2ff",
+                        "surface-variant": "#d9e3f6",
+                        "tertiary-fixed": "#ffdbce",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container-high": "#dee9fc",
+                        "on-tertiary-fixed": "#370e00",
+                        "on-tertiary-fixed-variant": "#773215",
+                        "difficulty-hard": "#EF4444",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "surface-container": "#e6eeff",
+                        "on-background": "#121c2a",
+                        "on-surface": "#121c2a",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary-container": "#b05e3d",
+                        "surface-tint": "#006a61",
+                        "accent-blue-light": "#EFF6FF",
+                        "background": "#f8f9ff",
+                        "outline": "#6d7a77",
+                        "on-tertiary-container": "#fffbff",
+                        "outline-variant": "#bcc9c6",
+                        "surface-dim": "#d0dbed",
+                        "on-tertiary": "#ffffff",
+                        "difficulty-medium": "#F59E0B",
+                        "inverse-primary": "#6bd8cb",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#fefcff",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "difficulty-easy": "#22C55E",
+                        "on-primary-fixed-variant": "#005049",
+                        "tertiary": "#924628",
+                        "primary-container": "#008378",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#001a42",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f8f9ff",
+                        "secondary": "#0058be"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-padding": "48px",
+                        "container-max": "1200px",
+                        "gutter": "24px",
+                        "base": "4px",
+                        "sidebar-width": "320px",
+                        "reading-max-width": "720px"
+                    },
+                    "fontFamily": {
+                        "body-reading": ["Source Serif 4"],
+                        "body-reading-mobile": ["Source Serif 4"],
+                        "tooltip-def": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "display-title": ["Hanken Grotesk"],
+                        "tooltip-word": ["Hanken Grotesk"],
+                        "label-pill": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-ui": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-reading": ["1.25rem", {"lineHeight": "1.8", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "body-reading-mobile": ["1.125rem", {"lineHeight": "1.7", "fontWeight": "400"}],
+                        "tooltip-def": ["0.875rem", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-md": ["1.125rem", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "display-title": ["2.5rem", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "tooltip-word": ["0.875rem", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-pill": ["0.75rem", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["1.5rem", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-ui": ["1rem", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface-background text-on-surface font-body-ui custom-scrollbar">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter h-16 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-8">
+<span class="font-display-title text-headline-lg font-bold text-primary">English Practice</span>
+<nav class="hidden md:flex gap-6 items-center h-full">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-ui" href="#">Dashboard</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-ui" href="#">Practice</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-ui" href="#">Library</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">settings</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">account_circle</button>
+</div>
+</header>
+<div class="flex pt-16">
+<!-- SideNavBar (Progress is Active) -->
+<aside class="hidden lg:flex flex-col fixed left-0 top-16 h-[calc(100vh-64px)] p-4 bg-surface-container-low border-r border-outline-variant w-sidebar-width">
+<div class="mb-8">
+<h2 class="font-display-title text-headline-md text-primary px-4 mb-1">Learning Hub</h2>
+<p class="font-label-pill text-label-pill text-on-surface-variant px-4">Level: Intermediate</p>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-pill text-label-pill">Daily Reading</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">translate</span>
+<span class="font-label-pill text-label-pill">Vocabulary</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">headphones</span>
+<span class="font-label-pill text-label-pill">Listening</span>
+</a>
+<a class="flex items-center gap-4 bg-accent-teal-light text-primary rounded-lg px-4 py-3 border-l-4 border-primary scale-[0.98] transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">leaderboard</span>
+<span class="font-label-pill text-label-pill font-bold">Progress</span>
+</a>
+</nav>
+<button class="w-full mt-4 bg-primary text-on-primary py-3 rounded-lg font-label-pill text-label-pill hover:opacity-90 transition-opacity">
+                Start New Lesson
+            </button>
+<div class="mt-auto border-t border-outline-variant pt-4 space-y-1">
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-2 hover:bg-surface-container-highest rounded-lg" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-pill text-label-pill">Help</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-2 hover:bg-surface-container-highest rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-pill text-label-pill">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-grow lg:ml-sidebar-width p-gutter bg-surface-background min-h-screen">
+<div class="max-w-container-max mx-auto space-y-6">
+<!-- Header / Streak Hero -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div>
+<h1 class="font-display-title text-display-title text-on-background">Your Progress</h1>
+<p class="font-body-ui text-on-surface-variant">Keep the momentum going, Alex!</p>
+</div>
+<div class="flex items-center gap-4 bg-surface-card p-4 rounded-xl border border-outline-variant shadow-sm">
+<div class="w-12 h-12 rounded-full bg-accent-teal-light flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div>
+<p class="font-label-pill text-label-pill text-on-surface-variant">CURRENT STREAK</p>
+<p class="font-display-title text-headline-lg font-bold text-primary leading-tight">14 Days</p>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Activity Heatmap (Large Section) -->
+<div class="md:col-span-8 bg-surface-card p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-lg text-on-surface">Weekly Activity</h3>
+<div class="flex gap-2 items-center">
+<span class="font-label-pill text-label-pill text-on-surface-variant">Less</span>
+<div class="w-3 h-3 bg-surface-container-high rounded-sm"></div>
+<div class="w-3 h-3 bg-primary-fixed-dim rounded-sm"></div>
+<div class="w-3 h-3 bg-primary-container rounded-sm"></div>
+<div class="w-3 h-3 bg-primary rounded-sm"></div>
+<span class="font-label-pill text-label-pill text-on-surface-variant">More</span>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-2">
+<!-- Labels -->
+<div class="text-center font-label-pill text-label-pill text-on-surface-variant">Mon</div>
+<div class="text-center font-label-pill text-label-pill text-on-surface-variant">Tue</div>
+<div class="text-center font-label-pill text-label-pill text-on-surface-variant">Wed</div>
+<div class="text-center font-label-pill text-label-pill text-on-surface-variant">Thu</div>
+<div class="text-center font-label-pill text-label-pill text-on-surface-variant">Fri</div>
+<div class="text-center font-label-pill text-label-pill text-on-surface-variant">Sat</div>
+<div class="text-center font-label-pill text-label-pill text-on-surface-variant">Sun</div>
+<!-- Mock Data Cells -->
+<div class="heatmap-cell bg-primary rounded-md" title="120 mins"></div>
+<div class="heatmap-cell bg-primary-container rounded-md" title="80 mins"></div>
+<div class="heatmap-cell bg-primary-fixed-dim rounded-md" title="45 mins"></div>
+<div class="heatmap-cell bg-surface-container-high rounded-md" title="0 mins"></div>
+<div class="heatmap-cell bg-primary-container rounded-md" title="90 mins"></div>
+<div class="heatmap-cell bg-primary rounded-md" title="150 mins"></div>
+<div class="heatmap-cell bg-primary-container rounded-md" title="75 mins"></div>
+</div>
+<p class="mt-4 font-body-ui text-on-surface-variant text-sm">You've practiced 42% more this week compared to last.</p>
+</div>
+<!-- Listening Hours (Medium Section) -->
+<div class="md:col-span-4 bg-surface-card p-6 rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-lg text-on-surface">Listening</h3>
+<span class="material-symbols-outlined text-primary">headphones</span>
+</div>
+<p class="font-display-title text-headline-lg font-bold text-primary">24.5 Hours</p>
+<p class="font-label-pill text-label-pill text-on-surface-variant uppercase tracking-widest">Total Time</p>
+</div>
+<div class="h-24 flex items-end gap-1 pt-4">
+<!-- Sparkline Mock -->
+<div class="flex-1 bg-primary-fixed-dim rounded-t-sm" style="height: 30%"></div>
+<div class="flex-1 bg-primary-fixed-dim rounded-t-sm" style="height: 50%"></div>
+<div class="flex-1 bg-primary-fixed-dim rounded-t-sm" style="height: 40%"></div>
+<div class="flex-1 bg-primary-fixed-dim rounded-t-sm" style="height: 80%"></div>
+<div class="flex-1 bg-primary rounded-t-sm" style="height: 95%"></div>
+<div class="flex-1 bg-primary-fixed-dim rounded-t-sm" style="height: 60%"></div>
+<div class="flex-1 bg-primary-fixed-dim rounded-t-sm" style="height: 45%"></div>
+</div>
+</div>
+<!-- Words Learned (Medium Section) -->
+<div class="md:col-span-4 bg-surface-card p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-lg text-on-surface">Vocabulary</h3>
+<span class="material-symbols-outlined text-secondary">translate</span>
+</div>
+<div class="relative w-32 h-32 mx-auto mb-4">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-high" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary transition-all duration-1000 ease-out" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364.4" stroke-dashoffset="100" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-lg text-primary">1,240</span>
+<span class="font-label-pill text-[10px] text-on-surface-variant">WORDS</span>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Mastered</span>
+<span class="font-bold">840</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">In Progress</span>
+<span class="font-bold">400</span>
+</div>
+</div>
+</div>
+<!-- Recent Achievements (Wide Section) -->
+<div class="md:col-span-8 bg-surface-card p-6 rounded-xl border border-outline-variant shadow-sm">
+<h3 class="font-headline-lg text-on-surface mb-6">Recent Achievements</h3>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+<!-- Badge 1 -->
+<div class="achievement-card group relative flex flex-col items-center p-4 rounded-lg bg-surface-container-low border border-transparent hover:border-primary-fixed-dim transition-all cursor-default">
+<div class="badge-glow absolute inset-0 bg-primary/5 rounded-lg opacity-0 transition-opacity"></div>
+<div class="w-16 h-16 rounded-full bg-surface-card shadow-sm flex items-center justify-center mb-3 border border-outline-variant">
+<span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<p class="font-label-pill text-label-pill text-on-surface font-bold text-center">Early Bird</p>
+<p class="text-[10px] text-on-surface-variant text-center">Practice before 8 AM</p>
+</div>
+<!-- Badge 2 -->
+<div class="achievement-card group relative flex flex-col items-center p-4 rounded-lg bg-surface-container-low border border-transparent hover:border-primary-fixed-dim transition-all cursor-default">
+<div class="badge-glow absolute inset-0 bg-primary/5 rounded-lg opacity-0 transition-opacity"></div>
+<div class="w-16 h-16 rounded-full bg-surface-card shadow-sm flex items-center justify-center mb-3 border border-outline-variant">
+<span class="material-symbols-outlined text-3xl text-secondary" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</div>
+<p class="font-label-pill text-label-pill text-on-surface font-bold text-center">Avid Reader</p>
+<p class="text-[10px] text-on-surface-variant text-center">50 Passages Read</p>
+</div>
+<!-- Badge 3 -->
+<div class="achievement-card group relative flex flex-col items-center p-4 rounded-lg bg-surface-container-low border border-transparent hover:border-primary-fixed-dim transition-all cursor-default">
+<div class="badge-glow absolute inset-0 bg-primary/5 rounded-lg opacity-0 transition-opacity"></div>
+<div class="w-16 h-16 rounded-full bg-surface-card shadow-sm flex items-center justify-center mb-3 border border-outline-variant">
+<span class="material-symbols-outlined text-3xl text-tertiary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<p class="font-label-pill text-label-pill text-on-surface font-bold text-center">Fast Learner</p>
+<p class="text-[10px] text-on-surface-variant text-center">Perfect Quiz Score</p>
+</div>
+<!-- Badge 4 -->
+<div class="achievement-card group relative flex flex-col items-center p-4 rounded-lg bg-surface-container-low border border-transparent hover:border-primary-fixed-dim transition-all cursor-default">
+<div class="badge-glow absolute inset-0 bg-primary/5 rounded-lg opacity-0 transition-opacity"></div>
+<div class="w-16 h-16 rounded-full bg-surface-card shadow-sm flex items-center justify-center mb-3 border border-outline-variant">
+<span class="material-symbols-outlined text-3xl text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">groups</span>
+</div>
+<p class="font-label-pill text-label-pill text-on-surface font-bold text-center">Community</p>
+<p class="text-[10px] text-on-surface-variant text-center">Help 5 Learners</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Leaderboard Teaser / Asymmetric Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pb-gutter">
+<div class="lg:col-span-12 bg-surface-card overflow-hidden rounded-xl border border-outline-variant shadow-sm">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center bg-accent-teal-light/20">
+<h3 class="font-headline-lg text-on-surface">Global Leaderboard</h3>
+<button class="text-primary font-label-pill text-label-pill hover:underline">View All Rankings</button>
+</div>
+<div class="divide-y divide-outline-variant">
+<!-- Rank 1 -->
+<div class="flex items-center gap-4 p-4 hover:bg-surface-background transition-colors">
+<div class="w-8 font-display-title text-headline-md text-difficulty-medium italic">01</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young male student with a kind and focused expression, captured in soft, studio lighting with a clean, neutral background. The aesthetic is modern and minimalist, aligning with a corporate educational platform's light-mode design. The overall mood is encouraging and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3fgpsNbS6GlshN_enMf1WGKaPvFwxD-ksGzLMv7vVwTl9O8eWZrYwvU1Qlh_iVDCzHgSG3Kox3FvLIL7YewHY_kVOPovzotPjmRy7NxU9y2TAv4o4mXUEWrSx5Z6uM96oSmK5waJ4UTXTvS-KvnOk1xYBlMFaNl2aTUbNI6mKkft47cUYU0owATsfbNxIP0sxpBK4pNo866sHYTyhA8zYbFxhTSElzZLeE8K56IkGzea7uo-pWfpS88Oh1ooiAOKogbVHTFKFoSjK"/>
+</div>
+<div class="flex-grow">
+<p class="font-body-ui font-semibold">Sarah Jenkins</p>
+<p class="text-[10px] text-on-surface-variant uppercase">United Kingdom</p>
+</div>
+<div class="text-right">
+<p class="font-display-title text-primary font-bold">12,450</p>
+<p class="text-[10px] text-on-surface-variant">XP THIS MONTH</p>
+</div>
+</div>
+<!-- Rank 2 (User Focus) -->
+<div class="flex items-center gap-4 p-4 bg-accent-teal-light border-l-4 border-primary">
+<div class="w-8 font-display-title text-headline-md text-on-surface-variant italic">24</div>
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="font-bold">A</span>
+</div>
+<div class="flex-grow">
+<p class="font-body-ui font-semibold">Alex Rivera <span class="ml-2 font-label-pill text-[10px] bg-primary text-on-primary px-2 py-0.5 rounded-full uppercase">You</span></p>
+<p class="text-[10px] text-on-surface-variant uppercase">Mexico</p>
+</div>
+<div class="text-right">
+<p class="font-display-title text-primary font-bold">5,230</p>
+<p class="text-[10px] text-on-surface-variant">XP THIS MONTH</p>
+</div>
+</div>
+<!-- Rank 3 -->
+<div class="flex items-center gap-4 p-4 hover:bg-surface-background transition-colors">
+<div class="w-8 font-display-title text-headline-md text-on-surface-variant italic">25</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a cheerful woman with a professional demeanor, set in a bright, airy environment that suggests a high-end educational workspace. The lighting is soft and natural, emphasizing a minimalist and clean aesthetic with a focus on professional growth and calm clarity. The color palette is composed of soft whites and subtle tonal layers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD2knX8hnoKqa8RNNUKF_7JN9MMM5nqm6Pni3btQ6WzQMB9sPbtKlE8mh3N1a2bQq6rGc3rSGKi1S-1-L7OexvyqfEZNyXUnhULVivaqK5wxfknU18eKcgBRNcvVPUMYgvBukvoN_lnfiY3Ez_PywtBnTTVWJ2O8Pv_q7uSajysTfyMrXvizjLwljhoVRz2gZqLSNXd4msV6BnXHWC6AFyKMuzEykvPgpRCbG-wZBTUkI8deo7b7p-Lohhrc-50gQBNvzADMbPvpEk"/>
+</div>
+<div class="flex-grow">
+<p class="font-body-ui font-semibold">Mei Ling</p>
+<p class="text-[10px] text-on-surface-variant uppercase">China</p>
+</div>
+<div class="text-right">
+<p class="font-display-title text-primary font-bold">5,180</p>
+<p class="text-[10px] text-on-surface-variant">XP THIS MONTH</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="w-full py-8 px-gutter flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-background border-t border-outline-variant relative z-10 lg:pl-[344px]">
+<span class="font-display-title text-label-pill text-on-surface-variant">© 2024 English Practice. Focus on Fluency.</span>
+<div class="flex gap-6">
+<a class="font-label-pill text-label-pill text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-pill text-label-pill text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-pill text-label-pill text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Support</a>
+</div>
+</footer>
+<script>
+        // Optional micro-interactions
+        document.querySelectorAll('.heatmap-cell').forEach(cell => {
+            cell.addEventListener('mouseenter', () => {
+                cell.style.transform = 'scale(1.1)';
+                cell.style.transition = 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            });
+            cell.addEventListener('mouseleave', () => {
+                cell.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>
